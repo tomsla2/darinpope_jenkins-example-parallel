@@ -5,19 +5,19 @@ pipeline {
     stage('build') {
       parallel {
         stage('linux-armv6') {
-          agent {label 'linux-armv6'}
+          agent any
           steps {
             sh 'go install dpctl'
           }
         }
         stage('darwin-amd64') {
-          agent {label 'darwin-amd64'}
+          agent any
           steps {
             sh 'go install dpctl'
           }
         }
         stage('linux-amd64') {
-          agent {label 'linux-amd64'}
+          agent any
           steps {
             sh 'go install dpctl'
           }
